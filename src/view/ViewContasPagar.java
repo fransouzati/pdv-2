@@ -22,6 +22,7 @@ import model.ModelCliente;
 import model.ModelConta;
 import model.ModelTipoPagamento;
 import util.BLDatas;
+import util.CampoDinheiro;
 import util.DataClasses;
 
 /**
@@ -48,6 +49,7 @@ public class ViewContasPagar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.limparDados();
         this.habilitaDesabilitarCampos(false);
+        
     }
 
     /**
@@ -82,7 +84,6 @@ public class ViewContasPagar extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jbVisualizarPagar1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jcbClientes = new componentes.UJComboBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -91,17 +92,18 @@ public class ViewContasPagar extends javax.swing.JFrame {
         jtfDescricao = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jcbTipoPagamento = new componentes.UJComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtfObservacao = new javax.swing.JTextPane();
         jLabel10 = new javax.swing.JLabel();
         btCancelar2 = new javax.swing.JButton();
-        jdData = new com.toedter.calendar.JDateChooser();
-        jdVencimento = new com.toedter.calendar.JDateChooser();
-        jdPagamento = new com.toedter.calendar.JDateChooser();
         JbSAlvar = new javax.swing.JButton();
         jtfCodigoConta = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jdPagamento = new com.toedter.calendar.JDateChooser();
+        jdVencimento = new com.toedter.calendar.JDateChooser();
+        jdData = new com.toedter.calendar.JDateChooser();
+        jcbClientes = new javax.swing.JComboBox();
+        jcbTipoPagamento = new javax.swing.JComboBox();
         jtfValor = new util.CampoDinheiro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -328,8 +330,6 @@ public class ViewContasPagar extends javax.swing.JFrame {
             }
         });
 
-        jdPagamento.setEnabled(false);
-
         JbSAlvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/18x18/Save.png"))); // NOI18N
         JbSAlvar.setText("Salvar");
         JbSAlvar.addActionListener(new java.awt.event.ActionListener() {
@@ -343,6 +343,12 @@ public class ViewContasPagar extends javax.swing.JFrame {
         jtfCodigoConta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
         jLabel5.setText("Código da conta:");
+
+        jdPagamento.setEnabled(false);
+
+        jcbClientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jcbTipoPagamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -360,12 +366,12 @@ public class ViewContasPagar extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtfDescricao, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(286, 286, 286)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGap(0, 100, Short.MAX_VALUE))
                                     .addComponent(jtfCodigoConta))))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -373,25 +379,25 @@ public class ViewContasPagar extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(jLabel8)
-                            .addComponent(jcbTipoPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
-                                    .addComponent(jdData, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(29, 29, 29)
+                                    .addComponent(jdData, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(48, 48, 48)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
-                                    .addComponent(jdVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
+                                    .addComponent(jdVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(45, 45, 45)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelPagamento)
-                                    .addComponent(jdPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(24, 24, 24)
+                                    .addComponent(jdPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(43, 43, 43)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 121, Short.MAX_VALUE))))
+                                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jcbTipoPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 141, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,8 +408,8 @@ public class ViewContasPagar extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfCodigoConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfCodigoConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -422,21 +428,21 @@ public class ViewContasPagar extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel3)))
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jdData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jdPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jdData, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jdVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(jcbTipoPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 19, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCancelar2)
                     .addComponent(JbSAlvar))
@@ -816,7 +822,7 @@ public class ViewContasPagar extends javax.swing.JFrame {
         this.jtfValor.setEnabled(operaco);
         this.jcbTipoPagamento.setEnabled(operaco);
         this.jdData.setEnabled(operaco);
-        this.jdPagamento.setEnabled(operaco);
+        //this.jdPagamento.setEnabled(operaco);
         this.jdVencimento.setEnabled(operaco);
         this.jcbClientes.setEnabled(operaco);
         this.JbSAlvar.setEnabled(operaco);
@@ -888,8 +894,8 @@ public class ViewContasPagar extends javax.swing.JFrame {
     private javax.swing.JButton jbPesquisar2;
     private javax.swing.JButton jbVisualizarPagar;
     private javax.swing.JButton jbVisualizarPagar1;
-    private componentes.UJComboBox jcbClientes;
-    private componentes.UJComboBox jcbTipoPagamento;
+    private javax.swing.JComboBox jcbClientes;
+    private javax.swing.JComboBox jcbTipoPagamento;
     private com.toedter.calendar.JDateChooser jdData;
     private com.toedter.calendar.JDateChooser jdPagamento;
     private com.toedter.calendar.JDateChooser jdVencimento;
